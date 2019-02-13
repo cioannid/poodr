@@ -1,3 +1,5 @@
+require_relative 'wheel'
+
 class Gear
   attr_reader :chainring, :cog, :rim, :tire, :wheel
   def initialize(chainring, cog, rim, tire)
@@ -12,11 +14,5 @@ class Gear
 
   def gear_inches
     ratio * wheel.diameter
-  end
-
-  Wheel = Struct.new(:rim, :tire) do
-    def diameter
-      rim + (tire * 2)
-    end
   end
 end
